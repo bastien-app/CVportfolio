@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="monApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bastien G</title>
+    
+    <!-- Intégration de JetBrains Mono via Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <style>
+        body {
+            background-color: #121212;  /* Fond principal */
+            color: #e0e0e0;             /* Texte principal */
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #nomEcriture {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 2.5em;
+            color: #e0e0e0;  /* Texte principal */
+            position: relative;
+            border-right: solid 2px #00bfff;
+        }
+
+
+        @keyframes blink {
+            from, to {border-color: transparent;}
+            50% {border-color: #00bfff;}
+        }
+
+        p {
+            color: #a0a0a0;  /* Texte secondaire en gris moyen */
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #00bfff;  /* Lien en bleu électrique */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #33ccff;  /* Lien en bleu clair au survol */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="nomEcriture"></div>
+    
+
+
+    <script>
+        const nom = "Bastien Goumy";
+        let index = 0;
+        const anim = document.getElementById("nomEcriture");
+        
+        function ecrire() {
+            if (index < nom.length) {
+                anim.textContent += nom.charAt(index);
+                index++;
+                setTimeout(ecrire, 150);
+            } else {
+                setTimeout(clignoterCurseur, 500);
+            }
+        }
+
+        function clignoterCurseur() {
+            anim.style.animation = "blink 0.8s step-start infinite";  // Le curseur commence à clignoter
+        }
+
+        ecrire();
+    </script>
+
+</body>
+</html>
