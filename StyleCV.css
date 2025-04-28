@@ -1,0 +1,81 @@
+body {
+    background-color: #121212;  
+    color: #e0e0e0;             
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+#nomEcriture {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 2.5em;
+    color: #e0e0e0;
+    border-right: solid 2px #00bfff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+
+@keyframes blink {
+    from, to {border-color: transparent;}
+    50% {border-color: #00bfff;}
+}
+
+p {
+    color: #a0a0a0;  /* Texte secondaire en gris moyen */
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+a {
+    color: #00bfff;  /* Lien en bleu electrique */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #33ccff;  /* Lien en bleu clair au survol */
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#intro {
+    background-color: #121212; 
+    color: #e0e0e0;
+}
+
+#contenu {
+    background-color: #1e2d40;
+    color: #e0e0e0;
+    padding: 40px;
+    z-index: 2;
+    position: relative;
+}
+
+#fleche {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    transition: transform 0.5s;
+    font-size: 3em;
+    
+}
+
+#fleche:hover {
+    transform: translateX(-50%) translateY(-5px);
+    transition: transform 0.5s;
+}
