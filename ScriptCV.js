@@ -34,6 +34,32 @@ var observer = new IntersectionObserver(function(afficher) {
     threshold: 0.7
 });
 
-
-
 observer.observe(contenu);
+
+const sections = document.querySelectorAll("section");
+
+var observerSection = new IntersectionObserver(function(entries) {
+    for (let i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) {
+            var id = entries[i].target.id;
+
+            var lien = document.querySelectorAll('#menu a');
+            for (let j = 0; j < lien.length; j++) {
+                lien[j].classList.remove("active");
+            }
+
+            var lienActif = document.querySelector('#menu a[href="#' + id + '"]');
+            if (lienActif) {
+                lienActif.classList.add("active");
+            }
+            
+        }
+    }
+}, {
+    threshold: 0.51
+});
+
+for (let i = 0; i < sections.length; i++) {
+    observerSection.observe(sections[i]);
+}
+

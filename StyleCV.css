@@ -79,8 +79,47 @@ section {
     transition: transform 0.5s;
 }
 
+#menu {
+    position: fixed;
+    top: 50px;
+    right: 5px;
+    color: black;
+    z-index: 3;
+}
 
 #menu.hidden {
     display: none;
 }
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#menu li {
+    writing-mode: vertical-rl;
+}
+
+#menu li a {
+    color: black;
+    font-family: "VT323", monospace;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+#menu li a.active {
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+/*#menu li:hover {
+    background-color: #ccc;
+}*/
 
