@@ -1,7 +1,5 @@
-body {
-    background-color: #121212;  
-    color: #e0e0e0;             
-    font-family: 'JetBrains Mono', monospace;
+body {     
+    font-family: 'JetBrains Mono', monospace;        
     margin: 0;
     padding: 0;
     text-align: center;
@@ -9,12 +7,13 @@ body {
 }
 
 #nomEcriture {
+    font-family: 'VT323', monospace;
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    font-size: 2.5em;
+    font-size: 3em;
     color: #e0e0e0;
-    border-right: solid 2px #00bfff;
+    border-right: solid 17px white;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -25,7 +24,7 @@ body {
 
 @keyframes blink {
     from, to {border-color: transparent;}
-    50% {border-color: #00bfff;}
+    50% {border-color: white;}
 }
 
 p {
@@ -35,7 +34,7 @@ p {
 }
 
 a {
-    color: #00bfff;  /* Lien en bleu electrique */
+    color: white;  /* Lien en bleu electrique */
     text-decoration: none;
     font-weight: bold;
 }
@@ -53,13 +52,13 @@ section {
 }
 
 #intro {
-    background-color: #121212; 
+    background-color: black; 
     color: #e0e0e0;
 }
 
 #contenu {
-    background-color: #1e2d40;
-    color: #e0e0e0;
+    background-color: #E5E5E5;
+    color: black;
     padding: 40px;
     z-index: 2;
     position: relative;
@@ -79,3 +78,9 @@ section {
     transform: translateX(-50%) translateY(-5px);
     transition: transform 0.5s;
 }
+
+
+#menu.hidden {
+    display: none;
+}
+
