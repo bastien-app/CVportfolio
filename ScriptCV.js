@@ -31,7 +31,7 @@ var observer = new IntersectionObserver(function(afficher) {
         }
     }
 }, {
-    threshold: 0.7
+    threshold: 0.9
 });
 
 observer.observe(contenu);
