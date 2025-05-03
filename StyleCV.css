@@ -44,11 +44,15 @@ a:hover {
 }
 
 section {
+    background-color: #E5E5E5;
+    color: black;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 2;
+    position: relative;
 }
 
 #intro {
@@ -56,12 +60,10 @@ section {
     color: #e0e0e0;
 }
 
-#contenu {
-    background-color: #E5E5E5;
-    color: black;
+div.texte {
     padding: 40px;
-    z-index: 2;
-    position: relative;
+    margin-right: 40px;
+    
 }
 
 #fleche {
