@@ -18,39 +18,55 @@ function clignoterCurseur() {
 
 ecrire();
 
+
+
+//Animation apparition et disparition menu
 const contenu = document.getElementById("contenu");
 const menu = document.getElementById("menu");
-
+const intro = document.getElementById("intro");
 
 var observer = new IntersectionObserver(function(afficher) {
     for (let i = 0; i < afficher.length; i++) {
         if (afficher[i].isIntersecting) {
-            menu.classList.remove("hidden");
+            menu.classList.add("disappear");
+            void menu.offsetWidth;
+            menu.classList.remove("appear");
         } else {
-            menu.classList.add("hidden");
+            menu.classList.add("appear");
+            void menu.offsetWidth;
+            menu.classList.remove("disappear");
         }
     }
 }, {
-    threshold: 0.9
+    threshold: 0.1
 });
 
-observer.observe(contenu);
+observer.observe(intro);
 
+
+
+
+//Animation élément menu actif
 const sections = document.querySelectorAll("section");
 
 var observerSection = new IntersectionObserver(function(entries) {
     for (let i = 0; i < entries.length; i++) {
         if (entries[i].isIntersecting) {
             var id = entries[i].target.id;
-
             var lien = document.querySelectorAll('#menu a');
+
             for (let j = 0; j < lien.length; j++) {
                 lien[j].classList.remove("active");
+                lien[j].classList.remove("animate");
             }
 
+            
             var lienActif = document.querySelector('#menu a[href="#' + id + '"]');
+            void lienActif.offsetWidth;
+
             if (lienActif) {
                 lienActif.classList.add("active");
+                lienActif.classList.add("animate");
             }
             
         }

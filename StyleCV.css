@@ -2,7 +2,7 @@ body {
     font-family: 'JetBrains Mono', monospace;        
     margin: 0;
     padding: 0;
-    text-align: center;
+    text-align: left;
     scroll-behavior: smooth;
 }
 
@@ -44,7 +44,7 @@ a:hover {
 }
 
 section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,15 +80,13 @@ section {
 }
 
 #menu {
+    opacity: 0;
+    pointer-events: none;
     position: fixed;
     top: 50px;
-    right: 5px;
+    right: 10px;
     color: black;
     z-index: 3;
-}
-
-#menu.hidden {
-    display: none;
 }
 
 #menu ul {
@@ -119,7 +117,42 @@ section {
     transition: all 0.3s ease;
 }
 
+#menu li a.animate {
+    
+}
+
+
 /*#menu li:hover {
     background-color: #ccc;
 }*/
 
+@keyframes fonduArrive {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#menu.appear {
+    animation: fonduArrive 0.5s ease forwards;
+    pointer-events: auto;
+}
+
+@keyframes fonduPart {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+
+#menu.disappear {
+    animation: fonduPart 0.5s ease forwards;
+}
