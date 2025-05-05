@@ -84,7 +84,7 @@ div.texte {
 #menu {
     opacity: 0;
     pointer-events: none;
-    position: fixed;
+    position: relative;
     top: 50px;
     right: 10px;
     color: black;
@@ -153,13 +153,9 @@ div.texte {
 
 
 div.indicateur {
-    position: fixed;
+    position: absolute;
     background-color: red;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 50px;
-    z-index: 999;
+    z-index: 2;
     border-radius: 10px;
     transition: all 0.4s ease;
     pointer-events: none;

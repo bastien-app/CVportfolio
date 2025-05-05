@@ -62,15 +62,19 @@ var observerSection = new IntersectionObserver(function(entries) {
 
             
             var lienActif = document.querySelector('#menu a[href="#' + id + '"]');
-            void lienActif.offsetWidth;
 
             if (lienActif) {
                 lienActif.classList.add("active");
-                const posAnimTransi = lienActif.getBoundingClientRect();
-                console.log(posAnimTransi);
-                animTransi.style.top = posAnimTransi.top + "px";
-                animTransi.style.left = posAnimTransi.left + "px";
-                animTransi.style.width = "100px";/*posAnimTransi.width + "px";*/
+                /*const posAnimTransi = lienActif.getBoundingClientRect();*/
+                const posLien = lienActif.getBoundingClientRect();
+                const posMenu = menu.getBoundingClientRect();
+
+                const relativeTop = posLien.top - posMenu.top;
+                const relativeLeft = posLien.left - posMenu.left;
+                /*console.log(posAnimTransi);*/
+                animTransi.style.top = relativeTop + "px";
+                animTransi.style.left = relativeLeft + "px";
+                animTransi.style.width = posAnimTransi.width + "px";
                 animTransi.style.height = posAnimTransi.height + "px";
             }
             
