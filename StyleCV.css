@@ -160,9 +160,10 @@ div.texte {
 
 div.indicateur {
     position: absolute;
-    background-color: red;
+    background-color: black;
     z-index: 0;
     border-radius: 10px;
+    padding: 5px 10px;
     transition: all 0.4s ease;
     pointer-events: none;
 }
