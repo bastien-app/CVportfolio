@@ -155,7 +155,11 @@ div.texte {
 div.indicateur {
     position: fixed;
     background-color: red;
-    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 50px;
+    z-index: 999;
     border-radius: 10px;
     transition: all 0.4s ease;
     pointer-events: none;
