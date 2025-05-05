@@ -74,8 +74,8 @@ var observerSection = new IntersectionObserver(function(entries) {
                 /*console.log(posAnimTransi);*/
                 animTransi.style.top = relativeTop + "px";
                 animTransi.style.left = relativeLeft + "px";
-                animTransi.style.width = posAnimTransi.width + "px";
-                animTransi.style.height = posAnimTransi.height + "px";
+                animTransi.style.width = posLien.width + "px";
+                animTransi.style.height = posLien.height + "px";
             }
             
         }
