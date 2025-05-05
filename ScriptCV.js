@@ -67,6 +67,7 @@ var observerSection = new IntersectionObserver(function(entries) {
             if (lienActif) {
                 lienActif.classList.add("active");
                 const posAnimTransi = lienActif.getBoundingClientRect();
+                console.log(posAnimTransi);
                 animTransi.style.top = posAnimTransi.top + "px";
                 animTransi.style.left = posAnimTransi.left + "px";
                 animTransi.style.width = posAnimTransi.width + "px";
