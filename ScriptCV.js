@@ -70,7 +70,7 @@ var observerSection = new IntersectionObserver(function(entries) {
                 console.log(posAnimTransi);
                 animTransi.style.top = posAnimTransi.top + "px";
                 animTransi.style.left = posAnimTransi.left + "px";
-                animTransi.style.width = posAnimTransi.width + "px";
+                animTransi.style.width = "100px";/*posAnimTransi.width + "px";*/
                 animTransi.style.height = posAnimTransi.height + "px";
             }
             
