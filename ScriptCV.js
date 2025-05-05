@@ -76,7 +76,7 @@ var observerSection = new IntersectionObserver(function(entries) {
         }
     }
 }, {
-    threshold: 0.51
+    threshold: 0.70
 });
 
 for (let i = 0; i < sections.length; i++) {
