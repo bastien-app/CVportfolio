@@ -49,6 +49,7 @@ observer.observe(intro);
 //Animation élément menu actif
 const sections = document.querySelectorAll("div.texte");
 const animTransi = document.querySelector("div.indicateur");
+const conteneurMenu = document.querySelector(".conteneur-menu");
 
 var observerSection = new IntersectionObserver(function(entries) {
     for (let i = 0; i < entries.length; i++) {
@@ -67,7 +68,7 @@ var observerSection = new IntersectionObserver(function(entries) {
                 lienActif.classList.add("active");
                 /*const posAnimTransi = lienActif.getBoundingClientRect();*/
                 const posLien = lienActif.getBoundingClientRect();
-                const posMenu = menu.getBoundingClientRect();
+                const posMenu = conteneurMenu.getBoundingClientRect();
 
                 const relativeTop = posLien.top - posMenu.top;
                 const relativeLeft = posLien.left - posMenu.left;
