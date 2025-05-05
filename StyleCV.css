@@ -119,14 +119,6 @@ div.texte {
     transition: all 0.3s ease;
 }
 
-#menu li a.animate {
-    
-}
-
-
-/*#menu li:hover {
-    background-color: #ccc;
-}*/
 
 @keyframes fonduArrive {
     from {
@@ -157,4 +149,14 @@ div.texte {
 
 #menu.disappear {
     animation: fonduPart 0.5s ease forwards;
+}
+
+
+div.indicateur {
+    position: fixed;
+    background-color: black;
+    z-index: 2;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    pointer-events: none;
 }

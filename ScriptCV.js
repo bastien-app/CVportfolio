@@ -48,6 +48,7 @@ observer.observe(intro);
 
 //Animation élément menu actif
 const sections = document.querySelectorAll("div.texte");
+const animTransi = document.querySelector("div.indicateur");
 
 var observerSection = new IntersectionObserver(function(entries) {
     for (let i = 0; i < entries.length; i++) {
@@ -57,7 +58,6 @@ var observerSection = new IntersectionObserver(function(entries) {
 
             for (let j = 0; j < lien.length; j++) {
                 lien[j].classList.remove("active");
-                lien[j].classList.remove("animate");
             }
 
             
@@ -66,7 +66,11 @@ var observerSection = new IntersectionObserver(function(entries) {
 
             if (lienActif) {
                 lienActif.classList.add("active");
-                lienActif.classList.add("animate");
+                const posAnimTransi = lienActif.getBoundingClientRect();
+                animTransi.style.top = posAnimTransi.top + "px";
+                animTransi.style.left = posAnimTransi.left + "px";
+                animTransi.style.width = posAnimTransi.width + "px";
+                animTransi.style.height = posAnimTransi.height + "px";
             }
             
         }
