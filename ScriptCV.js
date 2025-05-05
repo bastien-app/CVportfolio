@@ -47,7 +47,7 @@ observer.observe(intro);
 
 
 //Animation élément menu actif
-const sections = document.querySelectorAll("section");
+const sections = document.querySelectorAll("div.texte");
 
 var observerSection = new IntersectionObserver(function(entries) {
     for (let i = 0; i < entries.length; i++) {
