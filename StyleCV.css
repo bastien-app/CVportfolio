@@ -88,7 +88,7 @@ div.texte {
     top: 50px;
     right: 10px;
     color: black;
-    z-index: 3;
+    z-index: 4;
 }
 
 #menu ul {
@@ -155,7 +155,7 @@ div.texte {
 div.indicateur {
     position: fixed;
     background-color: black;
-    z-index: 2;
+    z-index: 3;
     border-radius: 10px;
     transition: all 0.4s ease;
     pointer-events: none;
