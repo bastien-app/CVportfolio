@@ -61,6 +61,7 @@ section {
 }
 
 div.texte {
+    width: 100vw;
     padding: 40px;
     margin-right: 40px;
     
@@ -185,7 +186,7 @@ div.indicateur {
 }
 
 .liste-compétence img {
-    width: 24 px;
-    height: 24 px;
+    width: 24px;
+    height: 24px;
     margin-right: 10px;
 }
