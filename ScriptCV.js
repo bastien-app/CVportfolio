@@ -66,7 +66,7 @@ var observerSection = new IntersectionObserver(function(entries) {
 
             if (lienActif) {
                 lienActif.classList.add("active");
-                animTransi.classList.add("etirement");
+                
                 /*const posAnimTransi = lienActif.getBoundingClientRect();*/
                 const posLien = lienActif.getBoundingClientRect();
                 const posMenu = conteneurMenu.getBoundingClientRect();
@@ -74,14 +74,19 @@ var observerSection = new IntersectionObserver(function(entries) {
                 const relativeTop = posLien.top - posMenu.top;
                 const relativeLeft = posLien.left - posMenu.left;
                 /*console.log(posAnimTransi);*/
-                animTransi.style.top = relativeTop + "px";
-                animTransi.style.left = relativeLeft + "px";
+
                 animTransi.style.width = posLien.width + "px";
                 animTransi.style.height = posLien.height + "px";
+
+                animTransi.classList.add("etirement");
+
+                animTransi.style.top = relativeTop + "px";
+                animTransi.style.left = relativeLeft + "px";
+                
                 
                 setTimeout(function(){
                     animTransi.classList.remove("etirement");
-                }, 200);
+                }, 300);
             }
             
         }
