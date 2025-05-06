@@ -77,6 +77,7 @@ var observerSection = new IntersectionObserver(function(entries) {
                 animTransi.style.left = relativeLeft + "px";
                 animTransi.style.width = posLien.width + "px";
                 animTransi.style.height = posLien.height + "px";
+                animTransi.style.borderradius = "50%";
             }
             
         }
