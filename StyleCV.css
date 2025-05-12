@@ -49,7 +49,7 @@ a:hover {
     color: #33ccff;  /* Lien en bleu clair au survol */
 }
 
-#contenu {
+section {
     background-color: #E5E5E5;
     color: black;
     min-height: 100vh;
