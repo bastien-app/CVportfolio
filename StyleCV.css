@@ -12,6 +12,14 @@ body {
     line-height: 1.7;
 }
 
+#contactIntro {
+    position: fixed;
+    z-index: 1;
+    top: 15px;
+    right: 10%;
+    
+}
+
 #nomEcriture {
     font-family: 'VT323', monospace;
     display: inline-block;
