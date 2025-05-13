@@ -231,7 +231,7 @@ div.indicateur {
     list-style: none;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
 }
 
 #contactFin img {
