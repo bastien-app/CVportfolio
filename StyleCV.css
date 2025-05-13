@@ -229,9 +229,12 @@ div.indicateur {
 
 #contactFin {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #contactFin img {
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
 }
