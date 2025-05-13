@@ -120,7 +120,7 @@ var observerSection = new IntersectionObserver(function(entries) {
         
     }
 }, {
-    threshold: [0, 0.2, 0.5, 0.8, 1.0]
+    threshold: 0.5
 });
 
 for (let i = 0; i < sections.length; i++) {
