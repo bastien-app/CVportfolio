@@ -50,7 +50,7 @@ observer.observe(intro);
 const sections = document.querySelectorAll("div.texte");
 const animTransi = document.querySelector("div.indicateur");
 const conteneurMenu = document.querySelector(".conteneur-menu");
-
+console.log("Sections observées :", sections);
 let currentActiveLink = null;
 
 const observerSection = new IntersectionObserver(function(entries) {
@@ -97,7 +97,7 @@ const observerSection = new IntersectionObserver(function(entries) {
 
 
         const lienActif = document.querySelector('#menu a[href="#' + id + '"]');
-        console.log(lienActif);
+        
 
         if (lienActif) {
             
@@ -128,7 +128,7 @@ const observerSection = new IntersectionObserver(function(entries) {
         
     }
 }, {
-    threshold: 0.6
+    threshold: 0.3
 });
 
 for (let i = 0; i < sections.length; i++) {
