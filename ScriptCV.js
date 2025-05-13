@@ -128,7 +128,7 @@ const observerSection = new IntersectionObserver(function(entries) {
         
     }
 }, {
-    threshold: [0.2, 0.5, 0.8]
+    threshold: 0.6
 });
 
 for (let i = 0; i < sections.length; i++) {

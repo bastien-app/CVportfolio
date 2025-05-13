@@ -81,6 +81,7 @@ h2 {
 
 div.texte {
     max-width: 100vw;
+    min-height: 50vh;
     padding-bottom: 40px;
     margin-right: 100px;
     
