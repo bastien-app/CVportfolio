@@ -25,7 +25,7 @@ const contenu = document.getElementById("contenu");
 const menu = document.getElementById("menu");
 const intro = document.getElementById("intro");
 
-var observer = new IntersectionObserver(function(afficher) {
+const observer = new IntersectionObserver(function(afficher) {
     for (let i = 0; i < afficher.length; i++) {
         if (afficher[i].isIntersecting) {
             menu.classList.add("disappear");
@@ -53,25 +53,33 @@ const conteneurMenu = document.querySelector(".conteneur-menu");
 
 let currentActiveLink = null;
 
-var observerSection = new IntersectionObserver(function(entries) {
-    let top = window.innerHeight;
-    let targetLink = null;
+const observerSection = new IntersectionObserver(function(entries) {
+
+
+    const sectionsVisibles = [];
 
     for (let i = 0; i < entries.length; i++) {
         if (entries[i].isIntersecting) {
             
-           const distanceFromTop = entries[i].boundingClientRect.top;
+           /*const distanceFromTop = entries[i].boundingClientRect.top;
             if (distanceFromTop >= 0 && distanceFromTop < top) {
                 top = distanceFromTop;
                 targetLink = entries[i].target;
-            }
+            }*/
+           sectionsVisibles.push(entries[i]);
 
         }
     }
 
-    if (targetLink) {
+    sectionsVisibles.sort(function(a ,b) {
+        return a.boundingClientRect.top - b.boundingClientRect.top;
+    });
 
-        var id = targetLink.id;
+    if (sectionsVisibles.length > 0) {
+
+        const targetLink = sectionsVisibles[0].target;
+
+        const id = targetLink.id;
 
         if (id === currentActiveLink) {
             return;
@@ -81,14 +89,14 @@ var observerSection = new IntersectionObserver(function(entries) {
         currentActiveLink = id;
 
         // On enlève la classe active de tous les liens
-        var lien = document.querySelectorAll('#menu a')
+        const liens = document.querySelectorAll('#menu a')
 
-        for (let j = 0; j < lien.length; j++) {
-                lien[j].classList.remove("active");
+        for (let j = 0; j < liens.length; j++) {
+                liens[j].classList.remove("active");
         }
 
 
-        var lienActif = document.querySelector('#menu a[href="#' + id + '"]');
+        const lienActif = document.querySelector('#menu a[href="#' + id + '"]');
         console.log(lienActif);
 
         if (lienActif) {
