@@ -73,7 +73,15 @@ const observerSection = new IntersectionObserver(function(entries) {
     });*/
 
     visibleEntries.sort(function(a, b) {
-        return a.boundingClientRect.top - b.boundingClientRect.top;
+        /*return a.boundingClientRect.top - b.boundingClientRect.top;*/
+        const aCenter = a.boundingClientRect.top + a.boundingClientRect.height / 2;
+        const bCenter = b.boundingClientRect.top + b.boundingClientRect.height / 2;
+        const screenCenter = window.innerHeight / 2;
+
+        const distA = Math.abs(aCenter - screenCenter);
+        const distB = Math.abs(bCenter - screenCenter);
+
+        return distA - distB;
     });
 
     if (visibleEntries.length > 0) {
