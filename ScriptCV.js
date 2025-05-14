@@ -55,17 +55,14 @@ let currentActiveLink = null;
 
 const observerSection = new IntersectionObserver(function(entries) {
 
-
-    const sectionsVisibles = [];
+    const visibleEntries = entries.filter(function(entry) {
+        return entry.isIntersecting;
+    })
+    /*const sectionsVisibles = [];
 
     for (let i = 0; i < entries.length; i++) {
         if (entries[i].isIntersecting) {
             
-           /*const distanceFromTop = entries[i].boundingClientRect.top;
-            if (distanceFromTop >= 0 && distanceFromTop < top) {
-                top = distanceFromTop;
-                targetLink = entries[i].target;
-            }*/
            sectionsVisibles.push(entries[i]);
 
         }
@@ -73,11 +70,15 @@ const observerSection = new IntersectionObserver(function(entries) {
 
     sectionsVisibles.sort(function(a ,b) {
         return a.boundingClientRect.top - b.boundingClientRect.top;
+    });*/
+
+    visibleEntries.sort(function(a, b) {
+        return a.boundingClientRect.top - b.boundingClientRect.top;
     });
 
-    if (sectionsVisibles.length > 0) {
+    if (visibleEntries.length > 0) {
 
-        const targetLink = sectionsVisibles[0].target;
+        const targetLink = visibleEntries[0].target;
 
         const id = targetLink.id;
 
@@ -91,8 +92,8 @@ const observerSection = new IntersectionObserver(function(entries) {
         // On enlève la classe active de tous les liens
         const liens = document.querySelectorAll('#menu a')
 
-        for (let j = 0; j < liens.length; j++) {
-                liens[j].classList.remove("active");
+        for (let i = 0; i < liens.length; i++) {
+                liens[i].classList.remove("active");
         }
 
 
@@ -128,7 +129,7 @@ const observerSection = new IntersectionObserver(function(entries) {
         
     }
 }, {
-    threshold: 0.3
+    threshold: 0.1
 });
 
 for (let i = 0; i < sections.length; i++) {
