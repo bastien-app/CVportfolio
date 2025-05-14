@@ -53,7 +53,7 @@ const conteneurMenu = document.querySelector(".conteneur-menu");
 console.log("Sections observées :", sections);
 let currentActiveLink = null;
 
-const seuil = window.innerHeight < 800 ? 0.01 : 0.6;
+const seuil = window.innerHeight < 800 ? 0.001 : 0.6;
 
 const observerSection = new IntersectionObserver(function(entries) {
 
