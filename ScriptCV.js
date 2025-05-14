@@ -47,13 +47,24 @@ observer.observe(intro);
 
 
 //Animation élément menu actif
-const sections = document.querySelectorAll("div.texte");
+const sections = document.querySelectorAll("section");
 const animTransi = document.querySelector("div.indicateur");
 const conteneurMenu = document.querySelector(".conteneur-menu");
 console.log("Sections observées :", sections);
 let currentActiveLink = null;
 
-const seuil = window.innerHeight < 800 ? 0.1 : 0.6;
+let seuil;
+
+if (window.innerHeight < 500) {
+    seuil = 0.15;
+}
+else if (window.innerHeight < 800){
+    seuil = 0.3;
+}
+else {
+    seuil = 0.6;
+}
+
 
 const observerSection = new IntersectionObserver(function(entries) {
 
@@ -61,6 +72,7 @@ const observerSection = new IntersectionObserver(function(entries) {
     const sectionsVisibles = [];
 
     for (let i = 0; i < entries.length; i++) {
+        console.log("→ Test:", entries[i].target.id, "| intersecting:", entries[i].isIntersecting, "| ratio:", entries[i].intersectionRatio);
         if (entries[i].isIntersecting) {
             
            /*const distanceFromTop = entries[i].boundingClientRect.top;
