@@ -2,9 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-* {
-    outline: 1px solid red;
-}
 
 body {         
     margin: 0;
@@ -75,7 +72,6 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
     position: relative;
     
 }
@@ -89,7 +85,7 @@ section {
 
 #contenu {
     z-index: 2;
-    padding: 80px 20px;
+    padding: 80px 100px 80px 20px;
 }
 
 h2, h3 {
