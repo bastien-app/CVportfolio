@@ -53,16 +53,21 @@ const conteneurMenu = document.querySelector(".conteneur-menu");
 console.log("Sections observées :", sections);
 let currentActiveLink = null;
 
+const seuil = window.innerHeight < 800 ? 0.4 : 0.2;
+
 const observerSection = new IntersectionObserver(function(entries) {
 
-    const visibleEntries = entries.filter(function(entry) {
-        return entry.isIntersecting;
-    })
-    /*const sectionsVisibles = [];
+
+    const sectionsVisibles = [];
 
     for (let i = 0; i < entries.length; i++) {
         if (entries[i].isIntersecting) {
             
+           /*const distanceFromTop = entries[i].boundingClientRect.top;
+            if (distanceFromTop >= 0 && distanceFromTop < top) {
+                top = distanceFromTop;
+                targetLink = entries[i].target;
+            }*/
            sectionsVisibles.push(entries[i]);
 
         }
@@ -70,23 +75,11 @@ const observerSection = new IntersectionObserver(function(entries) {
 
     sectionsVisibles.sort(function(a ,b) {
         return a.boundingClientRect.top - b.boundingClientRect.top;
-    });*/
-
-    visibleEntries.sort(function(a, b) {
-        /*return a.boundingClientRect.top - b.boundingClientRect.top;*/
-        const aCenter = a.boundingClientRect.top + a.boundingClientRect.height / 2;
-        const bCenter = b.boundingClientRect.top + b.boundingClientRect.height / 2;
-        const screenCenter = window.innerHeight / 2;
-
-        const distA = Math.abs(aCenter - screenCenter);
-        const distB = Math.abs(bCenter - screenCenter);
-
-        return distA - distB;
     });
 
-    if (visibleEntries.length > 0) {
+    if (sectionsVisibles.length > 0) {
 
-        const targetLink = visibleEntries[0].target;
+        const targetLink = sectionsVisibles[0].target;
 
         const id = targetLink.id;
 
@@ -100,8 +93,8 @@ const observerSection = new IntersectionObserver(function(entries) {
         // On enlève la classe active de tous les liens
         const liens = document.querySelectorAll('#menu a')
 
-        for (let i = 0; i < liens.length; i++) {
-                liens[i].classList.remove("active");
+        for (let j = 0; j < liens.length; j++) {
+                liens[j].classList.remove("active");
         }
 
 
@@ -137,10 +130,9 @@ const observerSection = new IntersectionObserver(function(entries) {
         
     }
 }, {
-    threshold: 0.4
+    threshold: seuil
 });
 
 for (let i = 0; i < sections.length; i++) {
     observerSection.observe(sections[i]);
 }
-
