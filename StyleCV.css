@@ -78,6 +78,7 @@ section {
     z-index: 2;
     position: relative;
     padding: 80px 20px;
+    margin-right: 100px;
 }
 
 h2, h3 {
@@ -102,7 +103,6 @@ div.texte {
     max-width: 100%;
     min-height: 50vh;
     padding-bottom: 40px;
-    padding-right: 100px;
     box-sizing: border-box;
     
 }
