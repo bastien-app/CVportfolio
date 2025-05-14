@@ -129,7 +129,7 @@ const observerSection = new IntersectionObserver(function(entries) {
         
     }
 }, {
-    threshold: 0.1
+    threshold: 0.4
 });
 
 for (let i = 0; i < sections.length; i++) {
