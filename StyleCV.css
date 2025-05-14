@@ -43,7 +43,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    
 }
 
 
@@ -75,10 +75,21 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    z-index: 2;
+    
     position: relative;
+    
+}
+
+#intro {
+    z-index: 1;
+    background-color: black; 
+    color: #e0e0e0;
+
+}
+
+#contenu {
+    z-index: 2;
     padding: 80px 20px;
-    margin-right: 100px;
 }
 
 h2, h3 {
@@ -93,11 +104,6 @@ h2 {
     color: #333;
 }
 
-
-#intro {
-    background-color: black; 
-    color: #e0e0e0;
-}
 
 div.texte {
     max-width: 100%;
