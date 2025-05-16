@@ -78,3 +78,8 @@ body{
     transform: translate(150px);
   }
 }
+
+
+main {
+  background-color: #ECE9D8;
+}
