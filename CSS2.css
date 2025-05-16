@@ -113,6 +113,7 @@ main.visible {
 }
 
 #titreSite {
-  height: 100px;
-  background: linear-gradient(to right, #0a5cc0, #fff);
+  height: 50px;
+  max-width: 50vw;
+  background: linear-gradient(to right, #0a5cc0, #ECE9D8);
 }
