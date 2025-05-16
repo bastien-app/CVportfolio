@@ -111,3 +111,8 @@ main {
 main.visible {
   opacity: 1;
 }
+
+#titreSite {
+  height: 100px;
+  background: linear-gradient(to right, #0a5cc0, #fff);
+}
