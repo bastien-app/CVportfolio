@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,700');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
   background: #000; 
   font-family: 'Roboto', sans-serif; 
@@ -12,7 +19,7 @@ body{
     transform: translate(-50%, -50%);
     z-index: 1;
     opacity: 1;
-    transition: opacity 1s ease;
+    transition: opacity 1s;
 }
 
 .demarrage.hidden {
@@ -98,8 +105,9 @@ body{
 main {
   background-color: #ECE9D8;
   max-height: 100vh;
+  height: 100%;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 1s;
   z-index: 3;
 }
 
