@@ -93,15 +93,3 @@ section img {
   height: auto;
 }
 
-/*@keyframes flottement {
-  0%   { transform: translate(-50%, -50%) translate(0, 0); }
-  25%  { transform: translate(-50%, -50%) translate(5px, -8px); }
-  50%  { transform: translate(-50%, -50%) translate(0, -12px); }
-  75%  { transform: translate(-50%, -50%) translate(-5px, -8px); }
-  100% { transform: translate(-50%, -50%) translate(0, 0); }
-}
-
-.flotter {
-  animation: flottement 6s ease-in-out infinite;
-  animation-delay: 2s;
-}*/

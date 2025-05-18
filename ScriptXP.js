@@ -1,36 +1,63 @@
+let arret = false; 
+
 const dragHandle = document.getElementById("dragHandle");
 const draggableWindow = document.getElementById("draggableWindow");
 
-const path = document.querySelector("#infiniPath");
 
+const path = document.querySelector("#infiniPath");
 const pathLength = path.getTotalLength();
 
-let progress = 0;
-let speed = 0.001;
+let t = 0.5; // le temps
+let animationId = null;
+const amplitude = 0.02; // 5% de l’échelle du SVG
+
+
+
 
 function animate() {
-    const point = path.getPointAtLength(progress * pathLength);
-    draggableWindow.style.transform = `translate(calc(-50% + ${point.x}px), calc(-50% + ${point.y}px))`;
 
-    progress += speed;
-    if (progress > 1) progress = 0;
 
-    requestAnimationFrame(animate);
-  }
+  if (arret) return;
+  // Sinus pour un mouvement fluide en boucle (périodique)
+  const progress = (Math.sin(t) + 1) / 2; 
+  const point = path.getPointAtLength(progress * pathLength);
 
-animate();
+   
+
+  draggableWindow.style.transform = `
+    translate(
+      calc(-50% + ${point.x * amplitude}px),
+      calc(-50% + ${point.y * amplitude}px)
+    )
+  `;
+  t += 0.005; // plus petit = plus lent = plus smooth
+
+  animationId = requestAnimationFrame(animate);
+}
+
+
+if (!arret){
+  setTimeout(() => {
+  animate();
+  }, 2000);
+}
+
 
 
 
 let isDragging = false;
 let offsetX, offsetY;
 
-draggableWindow.classList.add('flotter');
+
 
 dragHandle.addEventListener("mousedown", (e) => {
   isDragging = true;
+  arret = true;
 
-  draggableWindow.classList.remove('flotter');
+  if (animationId) {
+    cancelAnimationFrame(animationId); // on arrête l'animation proprement
+    animationId = null;
+  }
 
     // Calculer la position du curseur par rapport à la fenêtre
   offsetX = e.clientX - draggableWindow.offsetLeft;
@@ -50,6 +77,16 @@ document.addEventListener("mousemove", (e) => {
 
 document.addEventListener("mouseup", () => {
   isDragging = false;
+  arret = false;
   document.body.style.userSelect = ""; // rétablir la sélection de texte
+
+  if (!animationId) {
+    setTimeout(() => {
+      if (!arret) {
+        animate();
+       }
+    }, 2000); // tu peux ajuster ce délai (100ms est souvent suffisant)
+   }
+
 });
 
