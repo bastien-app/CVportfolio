@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bastien G</title>
     <link rel="stylesheet" href="CSS2.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -14,22 +14,26 @@
 <body>
 
     <header class="intro">
-        <div class="intro-contenu">
-            <h1>Bastien Goumy</h1>
-            <div class="fenetre">
+
+        <svg width="0" height="0">
+            <path id="infiniPath" d="M 0,0 C 50,-50 150,50 200,0 C 150,-50 50,50 0,0" fill="none"/>
+        </svg>
+        <div class="intro-conteneur" id="draggableWindow">
+            <div class="fenetre" id="dragHandle">
                 <div class="cercle"></div>
                 <div class="cercle"></div>
                 <div class="cercle"></div>
             </div>
             <img class="photo-profil" src="img/Photo-profil.jpg" alt="Photo de profil">
-            
-            
-            <h2>Concepteur développeur d'applications en devenir</h2>
-            
-
-            <button>Découvrir</button> 
-
         </div>
+        <h1>Bastien Goumy</h1>
+            
+            
+            
+        <h2>Concepteur développeur d'applications en devenir</h2>
+            
+
+        <button>Découvrir</button> 
 
     </header>
 
@@ -230,4 +234,7 @@
         </section>
 
     </main>
+
+
+    <script src="ScriptXP.js"></script>
 </body>
