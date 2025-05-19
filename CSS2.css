@@ -32,6 +32,14 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  transition: opacity 1s ease, visibility 1s ease;
+  z-index: 3;
+}
+
+.intro.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .intro h2 {

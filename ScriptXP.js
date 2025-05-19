@@ -90,3 +90,11 @@ document.addEventListener("mouseup", () => {
 
 });
 
+
+
+const startButton = document.getElementById("startButton");
+const intro = document.querySelector(".intro");
+
+startButton.addEventListener("click", () => {
+  intro.classList.add("fade-out");
+})
