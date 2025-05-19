@@ -96,5 +96,9 @@ const startButton = document.getElementById("startButton");
 const intro = document.querySelector(".intro");
 
 startButton.addEventListener("click", () => {
-  intro.classList.add("fade-out");
-})
+  intro.classList.add("slide-out");
+
+  intro.addEventListener('transitionend', () => {
+    document.body.classList.add('revealed');
+  }, { once: true });
+});
