@@ -85,7 +85,7 @@ document.addEventListener("mouseup", () => {
       if (!arret) {
         animate();
        }
-    }, 2000); // tu peux ajuster ce délai (100ms est souvent suffisant)
+    }, 2000); 
    }
 
 });
@@ -99,6 +99,8 @@ startButton.addEventListener("click", () => {
   intro.classList.add("slide-out");
 
   intro.addEventListener('transitionend', () => {
+    document.body.classList.remove('no-scroll');
     document.body.classList.add('revealed');
+    
   }, { once: true });
 });

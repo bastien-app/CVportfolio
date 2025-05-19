@@ -26,6 +26,10 @@ body {
   color: #E6F0F2;
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
 
 .intro {
   position: fixed;
