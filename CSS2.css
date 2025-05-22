@@ -19,7 +19,7 @@ body {
 main { 
   opacity: 0;
   transform: translateY(70%); 
-  transition: transform 1s ease, opacity 1s ease; 
+  transition: transform 1s ease 0.3s, opacity 1s ease 0.3s; 
 }
 
 h1, h2, h3 {
@@ -160,6 +160,11 @@ body.revealed main {
   box-shadow: 0 0 4px #E6F0F2;
 }
 
+#startButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(50, 70, 90, 0.7); /* halo sombre bleuté */
+}
+
 @keyframes glow {
   0%, 100% {
     box-shadow: 0 0 5px #E6F0F2, 0 0 10px #E6F0F2, 0 0 20px #E6F0F2;
@@ -254,3 +259,27 @@ body.revealed .menu {
 .menu a:hover {
   color: #FFFFFF;
 }
+
+
+
+@media (max-height: 600px) {
+  .intro {
+    padding: 2rem;
+    justify-content: center;
+  }
+  #startButton {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .menu ul {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .menu {
+    padding: 6px 20px;
+  }
+}
+
