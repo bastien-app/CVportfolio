@@ -114,3 +114,29 @@ startButton.addEventListener("click", () => {
     
   }, { once: true });
 });
+
+
+const categorie = document.querySelectorAll(".categorie");
+const observCategories = new IntersectionObserver(function(entries) {
+
+  const elemVisible = [];
+
+  
+
+  for(let i = 0; i < entries.length; i++){
+    if(entries[i].isIntersecting){
+
+      for(let j = 0; j < entries.length; j++){
+        categorie[j].classList.remove("active");
+      }
+
+      entry.target.classList.add("active");
+    }
+  }
+}, { threshold: 0.5});
+
+
+
+for(let i = 0; categorie.length; i++) {
+  observCategories.observe(categorie[i]);
+}
