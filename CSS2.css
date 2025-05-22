@@ -285,26 +285,34 @@ body.revealed .menu {
 
 
 #competences {
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding: 15vh 10vw;
+  background-color: transparent;
+  max-width: 1200px;
   margin: 0 auto;
-  max-width: 1000px;
-  text-align: center;
+}
+
+#competences h2 {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  text-align: left;
+  color: #E6F0F2;
 }
 
 .competences {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.categorie {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(230, 240, 242, 0.1);
 }
 
 .categorie h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
   color: #AFCBFF;
-  border-bottom: 1px solid #AFCBFF;
-  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .categorie ul {
@@ -314,13 +322,16 @@ body.revealed .menu {
 }
 
 .categorie li {
-  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 1rem;
   padding: 0.5rem 1rem;
   margin-bottom: 0.5rem;
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  color: #E6F0F2;
   transition: background-color 0.3s ease;
+  max-width: 300px;
 }
 
 .categorie li:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.08);
 }
