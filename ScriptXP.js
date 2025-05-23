@@ -130,13 +130,13 @@ const observCategories = new IntersectionObserver(function(entries) {
         categorie[j].classList.remove("active");
       }
 
-      entry.target.classList.add("active");
+      entries[i].target.classList.add("active");
     }
   }
 }, { threshold: 0.5});
 
 
 
-for(let i = 0; categorie.length; i++) {
+for(let i = 0; i < categorie.length; i++) {
   observCategories.observe(categorie[i]);
 }
