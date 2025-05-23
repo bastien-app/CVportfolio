@@ -119,9 +119,6 @@ startButton.addEventListener("click", () => {
 const categorie = document.querySelectorAll(".categorie");
 const categorieObserver = new IntersectionObserver(function(entries) {
 
-  
-  
-
   for(let i = 0; i < entries.length; i++){
     if(entries[i].isIntersecting && !entries[i].target.classList.contains("has-animated")){
 
@@ -136,7 +133,7 @@ const categorieObserver = new IntersectionObserver(function(entries) {
         el.style.animation = `floatIn 0.6s ease-out ${delay}s forwards`;
 
         setTimeout(() => {
-          el.style.animation = `gentleFloat 6s ease-in-out infinite`;
+          el.style.animation += `gentleFloat 6s ease-in-out infinite`;
         }, (delay + 0.6) * 1000); // délai + durée floatIn
       });
 
