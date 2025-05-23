@@ -134,6 +134,10 @@ const categorieObserver = new IntersectionObserver(function(entries) {
 
       randomized.forEach(({ el, delay }) => {
         el.style.animation = `floatIn 0.6s ease-out ${delay}s forwards`;
+
+        setTimeout(() => {
+          el.style.animation = `gentleFloat 6s ease-in-out infinite`;
+        }, (delay + 0.6) * 1000); // délai + durée floatIn
       });
 
       

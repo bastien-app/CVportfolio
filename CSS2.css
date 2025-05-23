@@ -197,9 +197,9 @@ section p + p {
 
 .texte {
   max-width: 65ch;
-  margin-left: auto;
+  /*margin-left: auto;
   margin-right: auto;
-  text-align: left;
+  text-align: left;*/
 }
 
 
