@@ -117,7 +117,7 @@ startButton.addEventListener("click", () => {
 
 
 const categorie = document.querySelectorAll(".categorie");
-const observCategories = new IntersectionObserver(function(entries) {
+const categorieObserver = new IntersectionObserver(function(entries) {
 
   
   
@@ -127,7 +127,7 @@ const observCategories = new IntersectionObserver(function(entries) {
 
       entries[i].target.classList.add("active", "has-animated");
 
-      const items = Array.from(entry.target.querySelectorAll('li'));
+      const items = Array.from(entries[i].target.querySelectorAll('li'));
       const randomized = items
         .map(item => ({ el: item, delay: Math.random() * 0.5 + 0.1 })) // entre 0.1 et 0.6s
         .sort(() => Math.random() - 0.5); // ordre aléatoire
@@ -144,5 +144,5 @@ const observCategories = new IntersectionObserver(function(entries) {
 
 
 for(let i = 0; i < categorie.length; i++) {
-  observCategories.observe(categorie[i]);
+  categorieObserver.observe(categorie[i]);
 }
