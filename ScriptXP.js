@@ -119,18 +119,24 @@ startButton.addEventListener("click", () => {
 const categorie = document.querySelectorAll(".categorie");
 const observCategories = new IntersectionObserver(function(entries) {
 
-  const elemVisible = [];
-
+  
   
 
   for(let i = 0; i < entries.length; i++){
-    if(entries[i].isIntersecting){
+    if(entries[i].isIntersecting && !entries[i].target.classList.contains("has-animated")){
 
-      for(let j = 0; j < entries.length; j++){
-        categorie[j].classList.remove("active");
-      }
+      entries[i].target.classList.add("active", "has-animated");
 
-      entries[i].target.classList.add("active");
+      const items = Array.from(entry.target.querySelectorAll('li'));
+      const randomized = items
+        .map(item => ({ el: item, delay: Math.random() * 0.5 + 0.1 })) // entre 0.1 et 0.6s
+        .sort(() => Math.random() - 0.5); // ordre aléatoire
+
+      randomized.forEach(({ el, delay }) => {
+        el.style.animation = `floatIn 0.6s ease-out ${delay}s forwards`;
+      });
+
+      
     }
   }
 }, { threshold: 0.5});

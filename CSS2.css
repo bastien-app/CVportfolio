@@ -305,8 +305,6 @@ body.revealed .menu {
 }
 
 .categorie {
-  padding-left: 2rem;
-  border-left: 2px solid rgba(230, 240, 242, 0.1);
   position: relative;
 }
 
@@ -338,22 +336,25 @@ body.revealed .menu {
   user-select: none;
   /* position relative pour animation */
   position: relative;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-/* Léger effet de flottement (animation keyframes) */
-@keyframes floatAround {
-  0%, 100% { transform: translate(0, 0); }
-  25% { transform: translate(3px, -4px); }
-  50% { transform: translate(-2px, 3px); }
-  75% { transform: translate(1px, -2px); }
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* on appliquera ce style seulement à la catégorie active */
-.categorie.active li {
-  animation: floatAround 6s ease-in-out infinite;
-  background-color: rgba(255, 255, 255, 0.07);
-  box-shadow: 0 4px 12px rgba(175, 203, 255, 0.4);
-  cursor: default;
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.categorie.has-animated li {
+  animation: gentleFloat 4s ease-in-out infinite;
+  animation-delay: 0.6s; /* après l'entrée */
 }
 
 /* hover léger sur les items actifs */
@@ -361,4 +362,12 @@ body.revealed .menu {
   background-color: rgba(255, 255, 255, 0.12);
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(175, 203, 255, 0.6);
+}
+
+
+.categorie li img {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.75rem;
+  vertical-align: middle;
 }
