@@ -126,13 +126,25 @@ const categorieObserver = new IntersectionObserver(function(entries) {
       
 
       const items = Array.from(entries[i].target.querySelectorAll('li'));
+
+      
+
       const randomized = items
         .map(item => ({ el: item, delay: Math.random() * 0.5 + 0.1 })) // entre 0.1 et 0.6s
         .sort(() => Math.random() - 0.5); // ordre aléatoire
 
       randomized.forEach(({ el, delay }) => {
-        el.style.animation = `floatIn 0.6s ease-out ${delay}s forwards`;
+        el.style.animationDelay = `${delay}s`;
+        
+        el.classList.add("float-in");
 
+        setTimeout(() => {
+            el.classList.remove("float-in");
+            el.classList.remove('hidden');
+            el.style.animationDelay = ""; // reset
+            el.classList.add("gentle-float");
+          }, (delay + 0.6) * 1000); // quand floatIn est terminé
+       
         
       });
 
