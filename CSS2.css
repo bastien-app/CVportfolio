@@ -172,14 +172,7 @@ body.revealed main {
   box-shadow: 0 0 0 3px rgba(50, 70, 90, 0.7); /* halo sombre bleuté */
 }
 
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 5px #E6F0F2, 0 0 10px #E6F0F2, 0 0 20px #E6F0F2;
-  }
-  50% {
-    box-shadow: 0 0 10px #E6F0F2, 0 0 20px #E6F0F2, 0 0 30px #E6F0F2;
-  }
-}
+
 
 
 section {
@@ -237,6 +230,10 @@ body.revealed .menu {
   list-style: none;
 }
 
+.menu li {
+  white-space: nowrap;
+}
+
 .menu a {
   color: #E6F0F2;
   text-decoration: none;
@@ -266,12 +263,6 @@ body.revealed .menu {
 .menu a:hover {
   color: #FFFFFF;
 }
-
-
-
-
-
-
 
 
 
@@ -329,6 +320,11 @@ body.revealed .menu {
   align-items: center;
   margin-bottom: 4rem;
   
+}
+
+#contactFin li {
+  width: 250px;
+  height: 200px;
 }
 
 .hidden {
@@ -403,6 +399,34 @@ body.revealed .menu {
   
 }
 
+
+#imageParcrous {
+  display: block;
+  margin: 20px auto 20px;
+  width: 50%;
+  height: auto;
+}
+
+
+.lien {
+  display: inline-block;
+  background: transparent;
+  text-decoration: none;
+  border: #E6F0F2 solid 2px;
+  border-radius: 5px;
+  color: #E6F0F2;
+  margin: 20px 0;
+  padding: 0 5px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.lien:hover {
+  background-color: #E6F0F2;
+  color: #0A1420;
+}
+
 @media (max-width: 1300px) {
   .conteneurTxtImage {
     flex-direction: column;
@@ -425,7 +449,20 @@ body.revealed .menu {
   }
 }
 
-@media (max-width: 1075px) {
+
+@media (max-width: 1500px) {
+  .menu ul {
+    gap: 0.8rem;
+    justify-content: center;
+  }
+  .menu {
+    padding: 10px 0;
+    
+  }
+  
+}
+
+@media (max-width: 975px) {
   .menu ul {
     gap: 0.8rem;
     justify-content: center;
@@ -433,10 +470,12 @@ body.revealed .menu {
   .menu {
     padding: 10px 0;
     font-size: 14px;
+    gap: 0.5rem;
     left: 0%;
     top: 0;
     transform: none;
     width: 100vw;
+    margin: 0 1px;
   }
 
   body {
@@ -455,14 +494,13 @@ body.revealed .menu {
   }
 }
 
-@media (max-width: 1500px) {
-  .menu ul {
-    gap: 0.8rem;
-    justify-content: center;
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px #E6F0F2, 0 0 10px #E6F0F2, 0 0 20px #E6F0F2;
   }
-  .menu {
-    padding: 10px 0;
-    font-size: 18px;
+  50% {
+    box-shadow: 0 0 10px #E6F0F2, 0 0 20px #E6F0F2, 0 0 30px #E6F0F2;
   }
-  
 }
+
+
