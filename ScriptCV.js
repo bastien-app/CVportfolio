@@ -117,6 +117,21 @@ startButton.addEventListener("click", () => {
 
 
 
+
+
+
+const screenWidth = window.innerWidth;
+
+let threshold;
+if (screenWidth < 600) {
+  threshold = 0.1; // sur petits écrans (mobiles)
+} else if (screenWidth < 1024) {
+  threshold = 0.5; // tablettes
+} else {
+  threshold = 0.6; // écrans larges
+}
+
+
 const categorie = document.querySelectorAll(".categorie");
 const categorieObserver = new IntersectionObserver(function(entries) {
 
@@ -156,7 +171,7 @@ const categorieObserver = new IntersectionObserver(function(entries) {
       
     }
   }
-}, { threshold: 0.5});
+}, { threshold });
 
 
 
