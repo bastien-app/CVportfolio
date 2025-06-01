@@ -6,95 +6,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bastien G</title>
     <link rel="stylesheet" href="StyleCV.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-    <!-- Integration des polices d'écriture -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    
+
 </head>
 
-<body>
-    <header id="intro">
-        <div id="contactIntro">
-            <a href="https://github.com/bastien-app" target="_blank"><img src="img/github-mark-white.svg" alt="Lien profil Github"></a>
-            <a href="https://fr.linkedin.com/in/bastien-goumy-81913027a" target="_blank"><img src="img/InBug-White.png" alt="Lien profil LinkedIn"></a>
+<body class="no-scroll">
+
+    <header class="intro">
+
+        <svg width="0" height="0">
+            <path id="infiniPath"
+                d="M -150,0
+                C -75,-75  75,75   150,0
+                C  75,-75 -75,75  -150,0"
+                fill="none" />
+        </svg>
+        <div class="intro-conteneur" id="draggableWindow">
+            <div class="fenetre" id="dragHandle">
+                <div class="cercle"></div>
+                <div class="cercle"></div>
+                <div class="cercle"></div>
+            </div>
+            <img class="photo-profil" src="img/Photo-profil.jpg" alt="Photo de profil">
         </div>
-        <div id="nomEcriture"></div>
-        <a href="#contenu" id="fleche">↓</a>
+        <div class="intro-titre">
+            <h1>Bastien Goumy</h1>
+            <h2>Concepteur développeur d'applications en devenir</h2>
+        </div>
+        
+            
+        
+        <button id="startButton">Découvrir</button> 
+
     </header>
 
-    <nav id="menu" role="navigation">
-        <div class="conteneur-menu">
-            <ul>
-                <li><a href="#propos">À propos</a></li>
-                <li><a href="#parcours">Parcours</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="indicateur"></div>
-        </div>
-    </nav>
-
-    <main id="contenu">
-
     
+
+    <nav class="menu" role="navigation">
+        <ul>
+            <li><a href="#propos">À propos</a></li>
+            <li><a href="#ecole">La formation</a></li>
+            <li><a href="#parcours">Parcours</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+
+        
         <section id="propos">
             <div class="texte">
                 <h2>À propos de moi</h2>
                 <p>Concepteur développeur en devenir, je recherche une alternance pour réussir la formation Développeur Fullstack Java Angular de <b>Human Booster</b>.
-                    Un pied aussi bien dans la science que dans la philosophie et l'éthique. Mon parcours atypique m'a permis de mêler logique, programmation et réflexion 
-                    sur l'intelligence humaine et artificielle.<br>
-                    Passionné par la culture et en particulier les jeux videos, internet et le numérique à toujours eu une place prépondérante dans ma vie. Aujourd'hui j'aspire
-                    travailler dans ce domaine afin d'apporter ma contribution à ce monde que j'aime tant.
+                    Je suis titulaire d'une Licence 2 mathématiques, informatique et physique, option informatique ainsi que d'un master de philosophie. Ce parcours atypique fait aussi ma force : 
+                    j'ai un pied dans la science comme dans la philosophie et l'éthique. Il m'a permis de croiser logique, programmation et réflexion sur l'intelligence artificielle. 
+                    Je possède une grande curiosité, une culture générale à la fois littéraire et scientifique, ainsi qu'une forte capacité d'adaptation.<br>
+                    Actuellement contractuel de la fonction publique au sein des facultés de médecine et de pharmacie, j'occupe le poste de référent fonctionnel des applications
+                    de scolarité. 
+                    Bien qu'il ne s'agisse pas d'un poste de développeur, ce travail reste ancré dans l'informatique. Il m'a permis de développer des compétences clés : 
+                    analyse fonctionnelle, travail d'équipe, pédagogie et adaptabilité — toutes transposables aux métiers de l'IT.
+                    <br>
+                    Passionné par la culture numérique, en particulier internet et les jeux vidéo, j'ai toujours accordé une place importante au digital dans ma vie. Aujourd'hui, je souhaite 
+                    m'y investir pleinement et apporter ma contribution à ce domaine que j'aime tant. J'aimerais ainsi achever mon cursus informatique dans les meilleures
+                    conditions. <br>Pourquoi pas avec vous ?<br>
                 </p>
             </div>
         </section>
+
+
+        <section id="ecole">
+            <div class="texte">
+                <h2>La formation Human Booster</h2>
+                <p>
+                    <b>Human Booster</b> est une école de formation créée en 2007 qui propose diverses formations, notamment en alternance. Sa volonté est de former des 
+                    professionnels autonomes et adaptables capables de répondre aux attentes des entreprises. Ses formations s'adaptent donc aux besoins du marché.
+                    Une autre de ses particularités est que la formation en alternance débute par un <b>BootCamp</b>, de septembre à décembre, avant de commencer
+                    l'alternance en janvier.
+                    <br>
+                    C'est pour cela que j'ai choisi cette école. J'estime que la formation de développeur Fullstack en alternance, donnant accès au titre de <b>Concepteur développeur
+                    d'applications</b>, est le meilleur moyen de compléter mon cursus informatique et de débuter dans les meilleures conditions ma nouvelle carrière. 
+                    <br>
+                    <a class="lien" href="https://humanbooster.com/nos-programmes/developpeur-fullstack-java-angular/" target="_blank" 
+                    title="Page de la formation développeur Fullstack Human Booster">→ Consulter la formation Human Booster</a>
+                </p>
+            </div>
+        </section>
+
+
+
+
+
+
 
         <section id="parcours">
             <div class="texte">
                 <h2>Parcours</h2>
                 <h3>Les commencements en mathématiques, informatique et physique</h3>
-                <p>Deux années de licence math-info-physique à l'université de Limoges. J'y ai acquéri des bases solides en algorithmique, programmation et logique.</p>
-
                 <p>
-                    Cette licence se concetrait sur les sciences de l'ingénieur. Cela m'a permis de faire mes premiers pas dans la programmation, tout en gardant un
-                    enseignement solide en physique et mathématiques. J'y ai notamment appris le langage C, l'algorithmique, le SQL et la gestion de bases de données.
-                    J'ai également eu l'occasion de découvir plus en profondeur le fonctionnement des ordinateurs et plus précisément des processeurs.
+                    J'ai débuté mes études supérieures par deux années de licence math-info-physique à l'université de Limoges. J'y ai acquis des bases solides en algorithmique, 
+                    programmation et logique.
+                    <br>
+                    Cette licence était centrée sur les sciences de l'ingénieur. Cela m'a permis de faire mes premiers pas dans la programmation, tout en gardant un
+                    enseignement solide en physique et mathématiques. J'y ai notamment appris le <b>langage C</b>, l'<b>algorithmique</b>, le <b>SQL</b> et <b>la gestion 
+                    de bases de données</b>.
+                    J'ai également eu l'occasion de découvrir plus en profondeur le fonctionnement des ordinateurs, et plus particulièrement celui des processeurs.
                 </p>
 
                 <h3>L'école d'ingénieur informatique</h3>
-                <P>Une année à l'école d'ingénieur informatique ISIMA. J'y ai poursuivis mon cursus ingénieur, en particulier sur l'aspect informatique</P>
-
                 <p>
-                    J'ai poursuivis à ISIMA, école d'ingénieur informatique, car j'ai voulu d'avantage m'axer sur l'informatique.
-                    J'avais pour but de me professionnalisé dans le développement logiciel.<br>
-                    Mais, au cours de cette première année, j'ai traversé une période difficile ― des problèmes de santé ainsi qu'une perte de sens
-                    m'ont amené à me remettre en question personnellement. J'ai donc pris la décision, difficile et risquée, de me retirer pour mieux me recentrer. 
+                    À la fin de ma licence 2, je me suis inscrit en première année à l'école d'ingénieur informatique ISIMA. 
+                    J'y ai poursuivi mon cursus d'ingénieur, en approfondissant l'aspect informatique.
+                    <br>
+                    J'ai choisi cette école parce que je souhaitais me spécialiser davantage dans l'informatique.
+                    Mon objectif était de me professionnaliser afin de travailler dans le développement web ou les jeux vidéo.
+                    <br>
+                    Mais, au cours de cette première année, j'ai traversé une période difficile : des problèmes de santé ainsi qu'une perte de sens
+                    m'ont amené à me remettre profondément en question. J'ai donc pris la décision — difficile et risquée — de me retirer pour me recentrer. 
                 </p>
 
 
                 <h3>La philosophie, un périple intellectuel</h3>
                 <p>
-                    Licence et Master de philosophie à l'Université Clermont Auvergne et à l'Université de Lorraine
-                </p>
-
-                <p>
-                    Je me suis réorienté dans un cursus de philosophie qui a été passionnant. Cela n'a pas été un renoncement à la science et au numérique, au contraire ! 
-                    J'ai pu y approfondir mes questionnements et découvrir des aspects de la science que ne soupçonnais pas.<br>
-                    L'informatique et le numérique sont restés au coeur de mes préoccupations. Je me suis d'ailleurs spécialisé en philosophie de l'esprit. 
-                    J'ai pu explorer les sujets de la conscience humaine, de la raison et de l'intelligence artificielle, des sujets aussi passionnants que majeurs
-                    à l'époque actuelle. 
+                    J'ai ensuite validé une licence et un master de philosophie à l'Université Clermont Auvergne et à l'Université de Lorraine.
+                    <br>
+                    Ce cursus de philosophie a été passionnant et très enrichissant. Cela n'a pas été un renoncement à la science et au numérique, bien au contraire ! 
+                    J'ai pu y approfondir mes questionnements et découvrir des aspects de la science que je ne soupçonnais pas.
+                    <br>
+                    L'informatique et le numérique sont restés au coeur de mes préoccupations. Je me suis d'ailleurs spécialisé en philosophie de l'esprit, 
+                    ce qui m'a permis d'explorer des sujets majeurs et passionnants : la conscience humaine et l'intelligence artificielle, des thématiques 
+                    particulièrement actuelles.
                 </p>
 
 
                 <h3>Retour au concret : référent à l'université</h3>
                 <p>
-                    Depuis janvier 2025 je travail à la faculté de médecine de l'UCA en tant que référent fonctionnel pour le logiciel de scolarité Pégase. 
-                    Ce poste ma place au coeur du déploiement du nouvel outil de gestion des données étudiantes, sans relever pour autant du développement
+                    Depuis janvier 2025, je travaille à la faculté de médecine de l'Université Clermont Auvergne en tant que référent fonctionnel pour le logiciel de scolarité PEGASE, 
+                    jusqu'en <b>août 2025</b>. 
+                    Ce poste me place au coeur du déploiement du nouvel outil de gestion des données étudiantes, sans relever pour autant du développement
                     informatique pur. 
-                    En réalité mon rôle consiste en :
+                    Concrètement, mon rôle consiste à :
                 </p>
                 <ul>
                     <li>
@@ -104,128 +157,253 @@
                         rédiger des comptes-rendus pour signaler les incohérences, les bugs ou les obstacles à l'usage ; 
                     </li>
                     <li>
-                        accompagner les équipes administratives dans leur prise en main de l'outil, à travers des formations et de la documentation.
+                        accompagner les équipes administratives dans leur prise en main de l'outil, via des formations et de la documentation.
                     </li>
                 </ul>
                 <p>
-                    Avec ce poste, je consolide mes compétences en communication, en rédaction et en analyse technique. Je garde un pied dans le numérique mais j'aspire à plus.
+                    Je suis en charge de tester les nouveaux modules avec les données réelles des étudiants. 
+                    Mon rôle est stratégique : je suis en charge des facultés les plus complexes en matière de maquettes
+                    de formation et de règles de calcul de notes. Si PEGASE fonctionne pour les facultés de médecine et de pharmacie, alors il fonctionnera pour
+                    toutes les autres. En ce sens, mon feu vert conditionne en grande partie le déploiement du logiciel 
+                    à l'Université Clermont Auvergne pour la rentrée 2026. 
+                    <br>
+                    Avec ce poste, je consolide mes compétences en travail d'équipe, en pédagogie, en adaptabilité et en analyse fonctionnelle. 
+                    Pas de programmation, certes, mais je garde un pied dans le numérique et j'aspire à aller plus loin.
+                    Bien que mon CDD ait de fortes chances d'être renouvelé, mon plan A reste la reconversion via la formation Human Booster.
+                    
                 </p>
 
                 <h3>L'ambition du développement web</h3>
                 <p>
-                    Fort de ce parcours hybride, je désir ardemment me consacrer pleinement dans le développement et en particulier le développement web. C'est 
-                    pour cela que je souhaite terminer mon cursus informatique. J'aimerais boucler la boucle ! C'est pour cela que je veux me former en alternance au métier de concepteur 
-                    développeur d’applications avec l'école Human Booster et peut-être avec vous. 
+                    Fort de mon parcours hybride, je souhaite aujourd'hui me consacrer pleinement au développement, et en particulier au développement web. 
+                    Mon objectif : terminer mon cursus informatique pour boucler la boucle ! 
+                    C'est pourquoi je veux me former en alternance et obtenir le titre de Concepteur 
+                    Développeur d'Applications avec l'école Human Booster et, peut-être, <b>avec vous</b>. 
                     Je construis actuellement mon portfolio pour mettre en valeur mes compétences techniques et ma démarche. 
-                    Mon premier projet est le site que vous êtes actuellement en train de consulter. 
-                    En espérant qu'il est aussi agréable à regarder qu'à lire !
+                    Mon premier projet est le site que vous êtes en train de consulter. 
+                    En espérant qu'il soit aussi agréable à regarder qu'à lire !
                 </p>
 
             </div>
         </section>
+
+
 
         <section id="competences">
+            
             <div class="texte">
                 <h2>Compétences</h2>
-
-                <h3>Langages de programmation</h3>
-                <ul class="liste-compétence">
-                    <li><img src="img/HTML5 Logo.svg" alt="HTML5 logo" /> HTML5</li>
-                    <li><img src="img/CSS3_logo_and_wordmark.svg" alt="CCS logo" /> CSS</li>
-                    <li><img src="img/Java_Logo.svg" alt="Java logo" /> Java</li>
-                    <li><img src="img/python-logo-only.svg" alt="Python logo" /> Python</li>
-                    <li><img src="img/C_Programming_Language.svg" alt="Langage C logo" /> C (notions car pratiquées en contexte universitaire)</li>
-                </ul>
-
-                <h3>Frameworks</h3>
-                <ul class="liste-compétence">
-                    <li><img src="img/Angular_full_color_logo.svg" alt="Angular logo" />Angular (familiarisation en cours)</li>
-                </ul>
-
-                <h3>Outils de développement</h3>
-                <ul class="liste-compétence">
-                    <li><img src="img/Visual_Studio_Code_1.35_icon.svg" alt="VScode logo" />Visual Studio Code</li>
-                    <li><img src="img/Git-Icon-Black.svg" alt="Git logo" />Git</li>
-                    <li><img src="img/github-mark.svg" alt="GitHub logo" />GitHub</li>
-                </ul>
-
-                <h3>Autres outils</h3>
-                <ul class="liste-compétence">
-                    <li><img src="img/Microsoft_Office_logo_(2013–2019).svg" alt="Microsoft Office logo" />Suite Microsoft Office (Word, Excel, PowerPoint)</li>
-                    <li><img src="img/Zotero.svg" alt="Zotero logo" />Zotero (gestion bibliographique)</li>
-                </ul>
-
-                <h2>Compétences transversales</h2>
-                <p>Rigueur analytique et logique, rédaction claire et structurée, autonomie dans l'apprentissage
-                    réflexion critique, aisance à l'oral.
-                </p>
-
             </div>
+                
+                <div class="categorie">
+                    <div class="texte">
+                        <h3>Langages de programmation</h3>
+                    </div>
+
+                    <ul>
+                        <li class="hidden"><img src="img/HTML5 Logo.svg" alt="HTML5 logo" /> <span>HTML5</span></li>
+                        <li class="hidden"><img src="img/CSS3_logo_and_wordmark.svg" alt="CCS logo" /> <span>CSS</span></li>
+                        <li class="hidden"><img src="img/Java_Logo.svg" alt="Java logo" /> <span>Java</span></li>
+                        <li class="hidden"><img src="img/python-logo-only.svg" alt="Python logo" /> <span>Python</span></li>
+                        <li class="hidden"><img src="img/C_Programming_Language.svg" alt="Langage C logo" /> <span>C (notions car pratiquées en contexte universitaire)</span></li>
+                    </ul>
+                </div>
+
+                <div class="categorie">
+                    <div class="texte">
+                        <h3>Frameworks</h3>
+                    </div>
+
+                    <ul>
+                        <li class="hidden"><img src="img/Angular_full_color_logo.svg" alt="Angular logo" /><span>Angular (familiarisation en cours)</span></li>
+                    </ul>
+                </div>
+
+                <div class="categorie">
+                    <div class="texte">
+                        <h3>Outils de développement</h3>
+                    </div>
+                    
+                    <ul>
+                        <li class="hidden"><img src="img/Visual_Studio_Code_1.35_icon.svg" alt="VScode logo" /><span>Visual Studio Code</span></li>
+                        <li class="hidden"><img src="img/Git-Icon-White.svg" alt="Git logo" /><span>Git</span></li>
+                        <li class="hidden"><img src="img/github-mark-white.svg" alt="GitHub logo" /><span>GitHub</span></li>
+                    </ul>
+                </div>
+
+                <div class="categorie">
+                    <div class="texte">
+                        <h3>Autres outils</h3>
+                    </div>
             
+                    <ul>
+                        <li class="hidden"><img src="img/Microsoft_Office_logo_(2013–2019).svg" alt="Microsoft Office logo" /><span>Suite Microsoft Office (Word, Excel, PowerPoint)</span></li>
+                        <li class="hidden"><img src="img/icon-zotero.png" alt="Zotero logo" /><span>Zotero (gestion bibliographique)</span></li>
+                    </ul>
+                </div>
+
+                <div class="categorie">
+                    <div class="texte">
+                        <h3>Compétences transversales</h3>
+                    </div>
+
+                    <ul>
+                        <li class="hidden">Adaptabilité</li>
+                        <li class="hidden">Autonomie</li>
+                        <li class="hidden">Rigueur</li>
+                        <li class="hidden">Communication écrite et orale</li>
+                        <li class="hidden">Curiosité</li>
+                        <li class="hidden">Esprit critique</li>
+                    </ul>
+                </div>
         </section>
+
+
+
+
 
 
         <section id="projets">
             <div class="texte">
                 <h2>Projets et portfolio personnel</h2>
 
-                <h3>Site statique réalisé en HTML, CSS et JavaScript</h3>
-                <p>Objectif : Présenter mon parcours, mes compétences, mes passions, mes projets et
-                    mes ambitions dans le cadre de ma recherche d'alternance. 
-                    Avec une navigation animée et responsive, ce site est là pour démontrer ma maîtrise de certains
-                    fondamentaux.
+
+                <h3>Projet Profan ISIMA</h3>
+                <p>
+                    Durant mon année d'étude à l'ISIMA, j'ai participé à un projet de groupe nommé Profan. 
+                    Le but était de réaliser différents projets en liens avec le pôle plurimédia du lycée Lafayette de 
+                    Clermont-Ferrand. Le projet confié à mon équipe consistait en un logiciel de Gestion 
+                    de Production Assistée par Ordinateur (GPAO) afin de faciliter la gestion des commandes passées auprès 
+                    du lycée. 
+                    <br>
+                    J'ai eu donc l'opportunité de collaborer avec un élève de BTS et un élève en bac professionel. 
+                    Grâce à leurs explications et conseils, j'ai créé une base de données
+                    en SQL via phpMyAdmin, à partir d'un modèle entité-association. Cette base permettait de gérer 
+                    à la fois les commandes et les comptes utilisateurs de l'application. 
+                    <br>
+                    <a class="lien" href="img/Base de donnée projet Profan modelisation.jpg" target="_blank" 
+                        title="Visualisation base de donnée projet Profan">→ Visionner la modélisation phpMyAdmin de la 
+                        base de donnée</a>      
+                    <br>
+                    Mes coéquipiers ont défini le design du site et nous avions commencé à le mettre en place.
+                    Cependant, nous n'avons malheureusement pas eu le temps de mener le projet à son terme. 
+                    L'objectif pédagogique de l'ISIMA était clair : nous faire apprendre les langages du web par la pratique, 
+                    alors que nous ne les avions pas encore étudiés auparavant. Il a donc fallu apprendre tout en concevant l'application. 
+                    Cette approche a été très formatrice, mais cela à eu pour
+                    conséquence qu'il n'était pas possible, pour un unique développeur en cours d'apprentissage, de finir l'ensemble 
+                    du site en trois mois, à raison d'une seule matinée de travail par semaine (temps aloué au projet). 
+                    Malgré cela, ce fut une expérience enrichissante. Travailler au sein d'une équipe pluridisciplinaire m'a permis
+                    de développer des compétences en communication, en pédagogie et en travail d'équipe. 
+                    <br>
+                    Apprendre à développer une application via un pratique concrete a été également très bénéfique. C'est une des raisons pour
+                    laquelle je souhaite aujourd'hui terminer mon cursus informatique via une pratique concrète dans un milieu 
+                    professionnel. 
+                    <br>
+                    <br>
+                    Bien que le projet n'ait pas pu être finalisé, il est possible de consulter le travail réalisé (code, base de données,
+                    cahier des charges, rapport rédigé à trois) sur le dépôt GitHub suivant : 
+                    <br>
+                    <a class="lien" href="https://github.com/bastien-app/Projet-PROFAN" target="_blank" title="Page GitHub projet Profan">
+                        → Consulter les fichier du projet PROFAN</a>
                 </p>
 
-                <h3>Exercices et petits projets en Java, Python, Angular</h3>
-                <p>Inserer texte ici</p>
+
+                <h3>Site statique réalisé en HTML, CSS et JavaScript</h3>
+                <p>
+                    Il s'agit du site que vous êtes en train de consulter ! on objectif est de présenter qui je suis, mon projet professionnel, la formation en alternance chez Human Booster,
+                     mes compétences et mes projets. C'est une première version, qui sera améliorée au fil du temps.
+                    J'ai réalisé ce site à la fois pour pratiquer et m'entraîner, mais également pour démontrer certaines de mes compétences.
+                </p>
+
+                <h3>Veille théorique et pratique</h3>
+                <p>
+                    Dans l'optique de reprendre efficacement la programmation et de me préparer au BootCamp de la formation de Human Booster,
+                    j'ai effectué une veille théorique, notamment sur le site <a href="https://www.w3schools.com" target="_blank" 
+                    title="Site de W3Schools">W3Schools</a>. Ce site permet de découvrir en détail les spécificités de chaque langages ou
+                    framework, de s'entrainer via des quizz et de passer, si on le souhaite, des certifications payantes. N'ayant pas encore obtenu de certification, 
+                    voici ma progression sur le site :
+                </p>
+            </div>
+
+                    <img src="img/Parcours W3Schools.png" alt="Parcours réalisés sur W3Schools" id="imageParcrous"/>
+
+            <div class="texte">
+                <p>
+                    Je m'entraine aussi activement sur le site <a href="https://www.freecodecamp.org" title="Site de FreeCodeCamp" target="_blank">FreeCodeCamp</a>.
+                    Ce site propose également un apprentissage théorique, mais celui-ci est combiné à une application directe de ce que l'on nous apprend.
+                    C'est un site très ludique et idéal pour apprendre. Vous pouvez consulter mon profil pour suivre ma progression ainsi que les certifications que j'ai
+                    obtenues ou obtiendrai. 
+                    <br>
+                    <a class="lien" href="https://www.freecodecamp.org/Bostian" target="_blank" title="Profil FreeCodeCamp">→ Consulter mon profil FreeCodeCamp</a>
+
+
+
+                </p>
 
                 <h3>Réalisation d'une application complète : site pour un photographe</h3>
-                <p>Inserer texte ici</p>
-
-
-                <h3>Mémoire de recherche sur l'intelligence artificielle</h3>
-                <p> Lors de mon master en philosophie, je me suis spécialisé en philosophie de l’esprit, un domaine qui s’interroge sur la nature 
-                    de la pensée humaine. Cette réflexion m’a conduit à explorer un modèle particulier de l’esprit, défendu par les philosophes 
-                    McDowell et Putnam, et connu sous le nom de naturalisme modéré. <br><br>
-                    
-                    Partant de cette approche, je me suis posé une question simple mais ambitieuse : une intelligence artificielle peut-elle 
-                    reproduire un esprit humain ? Pour y répondre, j’ai analysé les deux grands types d’IA existants — les IA symboliques et 
-                    les IA connexionnistes — en examinant leur fonctionnement, leurs capacités, mais aussi leurs limites fondamentales.
-                    <br>
-                    <br>
-                    Mon mémoire montre pourquoi, selon le modèle de l’esprit que j’étudie, les IA actuelles (et peut-être futures) sont incapables 
-                    de reproduire ce que nous appelons réellement « un esprit humain », à moins d’une condition qui, à ce jour, semble irréalisable.
-                    <br>
-                    <br>
-                    Si ce sujet vous intrigue, vous pouvez lire ou feuilleter mon mémoire en le téléchargeant ici :
-                    <br>
-                    « Les IA rêveront-elles un jour de moutons électriques ? Putnam, McDowell et le projet d’une intelligence artificielle »
-
-                   <a href="memoirePDF/Mémoire Bastien Goumy Les IA rêveront-elles un jour de moutons électriques.pdf"
-                    target="_blank" title="Mémoire Bastien Goumy Les IA rêveront-elles un jour de moutons électriques.pdf">[→ Télécharger le mémoire au format PDF]</a>.
+                <p>
+                    Un projet important que j'aimerais réaliser est un site pour un ami photographe. Il souhaite disposer d'un espace en 
+                    dehors des réseaux sociaux pour publier ses oeuvres. Avec un ami développeur web frontend, nous nous sommes proposés de créer ce site. 
+                    Le lien du site ainsi que mon rapport d'expérience seront affichés ici. 
                 </p>
 
-                <img src="" alt="Première page mémoire de recherche" />
-
             </div>
-
+                
+            <div class="conteneurTxtImage">
+                    <div class="description">
+                        <h3>Mémoire de recherche sur l'intelligence artificielle</h3>
+                        <p> 
+                            Lors de mon master en philosophie, je me suis spécialisé en philosophie de l'esprit, un domaine qui s'interroge sur la nature 
+                            de la pensée humaine. Cette réflexion m'a conduit à explorer un modèle particulier de l'esprit, défendu par les philosophes 
+                            McDowell et Putnam, et connu sous le nom de naturalisme modéré. <br><br>
+                            
+                            Partant de cette approche, je me suis posé une question simple mais ambitieuse : une intelligence artificielle peut-elle 
+                            reproduire un esprit humain ? Pour y répondre, j'ai analysé les deux grands types d'IA existants — les IA symboliques et 
+                            les IA connexionnistes — en examinant leur fonctionnement, leurs capacités, mais aussi leurs limites fondamentales.
+                            <br>
+                            <br>
+                            Mon mémoire montre pourquoi, selon le modèle de l'esprit que j'étudie, les IA actuelles (et peut-être futures) sont incapables 
+                            de reproduire ce que nous appelons réellement « un esprit humain », à moins d'une condition qui, à ce jour, semble irréalisable.
+                            <br>
+                            <br>
+                            Si ce sujet vous intrigue, vous pouvez lire ou parcourir mon mémoire en le téléchargeant ici :
+                            <br>
+                            « Les IA rêveront-elles un jour de moutons électriques ? Putnam, McDowell et le projet d'une intelligence artificielle ».
+                            <br>
+                        <a  class="lien" href="memoirePDF/Mémoire Bastien Goumy Les IA rêveront-elles un jour de moutons électriques.pdf"
+                            target="_blank" title="Mémoire Bastien Goumy Les IA rêveront-elles un jour de moutons électriques.pdf">→ Télécharger le mémoire au format PDF</a>
+                        </p>
+                    </div>
+                    <img src="img/Mémoire Bastien Goumy Les IA rêveront-elles un jour de moutons électriques_Page_001.jpg" alt="Première page mémoire de recherche" id="pageMemoire"/>
+                </div>
         </section>
 
+
+
+
+
+
         <section id="contact">
-            <div class="texte">
-                <ul id="contactFin">
-                    <li><a href="mailto:bastien.goumy@outlook.fr?subject=Alternance concepteur développeur d'application">bastien.goumy@outlook.fr</a></li>
-                    <li><a href="https://fr.linkedin.com/in/bastien-goumy-81913027a" target="_blank" title="LinkedIn"><img src="img/LI-In-Bug.png" alt="Logo Linkedin bleu"></a></li>
-                    <li><a href="https://github.com/bastien-app" target="_blank" title="GitHub"><img src="img/github-mark.svg" alt="Logo GitHub"></a></li>
-                </ul>
-            </div>
-
-
+            <h2>Contacts</h2>
+            <ul id="contactFin">
+                <li>
+                    <a href="mailto:bastien.goumy@outlook.fr?subject=Alternance concepteur développeur d'application">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                        </svg>
+                    </a>
+                </li>
+                <li><a href="https://fr.linkedin.com/in/bastien-goumy-81913027a" target="_blank" title="LinkedIn"><img src="img/LI-In-Bug.png" alt="Logo Linkedin bleu"></a></li>
+                <li><a href="https://github.com/bastien-app" target="_blank" title="GitHub"><img src="img/github-mark-white.svg" alt="Logo GitHub"></a></li>
+            </ul>
+            
         </section>
 
     </main>
 
+
     <script src="ScriptCV.js"></script>
 
+
+
 </body>
-</html>

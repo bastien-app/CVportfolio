@@ -1,150 +1,165 @@
-const nom = "Bastien Goumy";
-let index = 0;
-const anim = document.getElementById("nomEcriture");
-        
-function ecrire() {
-    if (index < nom.length) {
-        anim.textContent += nom.charAt(index);
-        index++;
-        setTimeout(ecrire, 150);
-    } else {
-        setTimeout(clignoterCurseur, 500);
-    }
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
 }
 
-function clignoterCurseur() {
-    anim.style.animation = "blink 0.8s step-start infinite"; 
-}
+window.scrollTo(0, 0);
 
-ecrire();
-
-
-
-//Animation apparition et disparition menu
-const contenu = document.getElementById("contenu");
-const menu = document.getElementById("menu");
-const intro = document.getElementById("intro");
-
-const observer = new IntersectionObserver(function(afficher) {
-    for (let i = 0; i < afficher.length; i++) {
-        if (afficher[i].isIntersecting) {
-            menu.classList.add("disappear");
-            void menu.offsetWidth;
-            menu.classList.remove("appear");
-        } else {
-            menu.classList.add("appear");
-            void menu.offsetWidth;
-            menu.classList.remove("disappear");
-        }
-    }
-}, {
-    threshold: 0.1
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
 });
 
-observer.observe(intro);
+let arret = false; 
+
+const dragHandle = document.getElementById("dragHandle");
+const draggableWindow = document.getElementById("draggableWindow");
+
+
+const path = document.querySelector("#infiniPath");
+const pathLength = path.getTotalLength();
+
+let t = 0.5; // le temps
+let animationId = null;
+const amplitude = 0.02; // 5% de l’échelle du SVG
 
 
 
 
-//Animation élément menu actif
-const sections = document.querySelectorAll("section");
-const animTransi = document.querySelector("div.indicateur");
-const conteneurMenu = document.querySelector(".conteneur-menu");
-console.log("Sections observées :", sections);
-let currentActiveLink = null;
+function animate() {
 
-let seuil;
 
-if (window.innerHeight < 500) {
-    seuil = 0.15;
+  if (arret) return;
+  // Sinus pour un mouvement fluide en boucle (périodique)
+  const progress = (Math.sin(t) + 1) / 2; 
+  const point = path.getPointAtLength(progress * pathLength);
+
+   
+
+  draggableWindow.style.transform = `
+    translate(
+      calc(-50% + ${point.x * amplitude}px),
+      calc(-50% + ${point.y * amplitude}px)
+    )
+  `;
+  t += 0.005; // plus petit = plus lent = plus smooth
+
+  animationId = requestAnimationFrame(animate);
 }
-else if (window.innerHeight < 800){
-    seuil = 0.3;
+
+
+if (!arret){
+  setTimeout(() => {
+  animate();
+  }, 2000);
 }
-else {
-    seuil = 0.6;
-}
 
 
-const observerSection = new IntersectionObserver(function(entries) {
 
 
-    const sectionsVisibles = [];
-
-    for (let i = 0; i < entries.length; i++) {
-        console.log("→ Test:", entries[i].target.id, "| intersecting:", entries[i].isIntersecting, "| ratio:", entries[i].intersectionRatio);
-        if (entries[i].isIntersecting) {
-            
-           /*const distanceFromTop = entries[i].boundingClientRect.top;
-            if (distanceFromTop >= 0 && distanceFromTop < top) {
-                top = distanceFromTop;
-                targetLink = entries[i].target;
-            }*/
-           sectionsVisibles.push(entries[i]);
-
-        }
-    }
-
-    sectionsVisibles.sort(function(a ,b) {
-        return a.boundingClientRect.top - b.boundingClientRect.top;
-    });
-
-    if (sectionsVisibles.length > 0) {
-
-        const targetLink = sectionsVisibles[0].target;
-
-        const id = targetLink.id;
-
-        if (id === currentActiveLink) {
-            return;
-        }
+let isDragging = false;
+let offsetX, offsetY;
 
 
-        currentActiveLink = id;
 
-        // On enlève la classe active de tous les liens
-        const liens = document.querySelectorAll('#menu a')
+dragHandle.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  arret = true;
 
-        for (let j = 0; j < liens.length; j++) {
-                liens[j].classList.remove("active");
-        }
+  if (animationId) {
+    cancelAnimationFrame(animationId); // on arrête l'animation proprement
+    animationId = null;
+  }
 
-
-        const lienActif = document.querySelector('#menu a[href="#' + id + '"]');
-        
-
-        if (lienActif) {
-            
-            lienActif.classList.add("active");
-                
-                
-            const posLien = lienActif.getBoundingClientRect();
-            const posMenu = conteneurMenu.getBoundingClientRect();
-
-            const relativeTop = posLien.top - posMenu.top;
-            const relativeLeft = posLien.left - posMenu.left;
-                
-
-            animTransi.style.width = posLien.width + "px";
-            animTransi.style.height = posLien.height + "px";
-
-            animTransi.classList.add("etirement");
-
-            animTransi.style.top = relativeTop + "px";
-            animTransi.style.left = relativeLeft + "px";
-                
-                
-            setTimeout(function(){
-                animTransi.classList.remove("etirement");
-            }, 300);
-        }
-            
-        
-    }
-}, {
-    threshold: seuil
+    // Calculer la position du curseur par rapport à la fenêtre
+  offsetX = e.clientX - draggableWindow.offsetLeft;
+  offsetY = e.clientY - draggableWindow.offsetTop;
+  draggableWindow.style.transition = 'none';
+  document.body.style.userSelect = 'none'; // éviter la sélection de texte
 });
 
-for (let i = 0; i < sections.length; i++) {
-    observerSection.observe(sections[i]);
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    const x = e.clientX - offsetX;
+    const y = e.clientY - offsetY;
+    draggableWindow.style.left = `${x}px`;
+    draggableWindow.style.top = `${y}px`;
+  }
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  arret = false;
+  document.body.style.userSelect = ""; // rétablir la sélection de texte
+
+  if (!animationId) {
+    setTimeout(() => {
+      if (!arret) {
+        animate();
+       }
+    }, 2000); 
+   }
+
+});
+
+
+
+const startButton = document.getElementById("startButton");
+const intro = document.querySelector(".intro");
+
+startButton.addEventListener("click", () => {
+  intro.classList.add("slide-out");
+
+  intro.addEventListener('transitionend', () => {
+    document.body.classList.remove('no-scroll');
+    document.body.classList.add('revealed');
+    
+  }, { once: true });
+});
+
+
+
+const categorie = document.querySelectorAll(".categorie");
+const categorieObserver = new IntersectionObserver(function(entries) {
+
+  for(let i = 0; i < entries.length; i++){
+    if(entries[i].isIntersecting && !entries[i].target.classList.contains("has-animated")){
+
+      
+
+      const items = Array.from(entries[i].target.querySelectorAll('li'));
+
+      
+
+      const randomized = items
+        .map(item => ({ el: item, delay: Math.random() * 0.5 + 0.1 })) // entre 0.1 et 0.6s
+        .sort(() => Math.random() - 0.5); // ordre aléatoire
+
+      randomized.forEach(({ el, delay }) => {
+        el.style.animationDelay = `${delay}s`;
+        
+        el.classList.add("float-in");
+
+        setTimeout(() => {
+            el.classList.remove("float-in");
+            el.classList.remove('hidden');
+            el.style.animationDelay = ""; // reset
+            el.classList.add("gentle-float");
+          }, (delay + 0.6) * 1000); // quand floatIn est terminé
+       
+        
+      });
+
+      const maxDelay = Math.max(...randomized.map((r) => r.delay));
+      
+      setTimeout(() => {
+          entries[i].target.classList.add("has-animated");
+      }, (maxDelay + 0.6) * 1000); // délai + durée floatIn
+      
+    }
+  }
+}, { threshold: 0.5});
+
+
+
+for(let i = 0; i < categorie.length; i++) {
+  categorieObserver.observe(categorie[i]);
 }

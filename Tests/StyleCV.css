@@ -1,0 +1,255 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {         
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+#contactIntro {
+    position: fixed;
+    z-index: 1;
+    top: 10px;
+    right: 80px;
+    
+}
+
+#contactIntro img {
+    height: 20px;
+    width: auto;
+    margin-right: 20px;
+}
+
+#nomEcriture {
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 3em;
+    color: #e0e0e0;
+    border-right: solid 17px white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+
+@keyframes blink {
+    from, to {border-color: transparent;}
+    50% {border-color: white;}
+}
+
+p {
+    color: black; 
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+a {
+    color: white;  /* Lien en bleu electrique */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #33ccff;  /* Lien en bleu clair au survol */
+}
+
+main {
+    background-color: #E5E5E5;
+    color: black;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    
+}
+
+#intro {
+    z-index: 1;
+    background-color: black; 
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+}
+
+#contenu {
+    z-index: 2;
+    padding: 80px 100px 80px 20px;
+}
+
+h2, h3 {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-weight: 600;
+    padding-left: 12px;
+    color: #333;
+}
+
+
+div.texte {
+    max-width: 100%;
+    min-height: 50vh;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    
+}
+
+
+#fleche {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    transition: transform 0.5s;
+    font-size: 3em;
+    
+}
+
+#fleche:hover {
+    transform: translateX(-50%) translateY(-5px);
+    transition: transform 0.5s;
+}
+
+#menu {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 50px;
+    right: 15px;
+    left: auto;
+    color: black;
+    z-index: 4;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#menu li {
+    writing-mode: vertical-rl;
+}
+
+#menu li a {
+    position: relative;
+    z-index: 1;
+    color: black;
+    font-family: "VT323", monospace;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+#menu li a.active {
+    box-sizing: border-box;
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+    padding: 7px;
+    transition: all 0.3s ease;
+}
+
+.conteneur-menu {
+    position: relative;
+}
+
+
+@keyframes fonduArrive {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#menu.appear {
+    animation: fonduArrive 0.5s ease forwards;
+    pointer-events: auto;
+}
+
+@keyframes fonduPart {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+
+#menu.disappear {
+    animation: fonduPart 0.5s ease forwards;
+}
+
+
+div.indicateur {
+    position: absolute;
+    background-color: black;
+    z-index: 0;
+    border-radius: 10px;
+    transition: top 0.4s, left 0.4s, width 0.3s, height 0.3s, transform 0.3s ease;
+    pointer-events: none;
+}
+
+
+.indicateur.etirement {
+    transform: scale(1.4, 1);
+}
+
+
+.liste-compétence {
+    list-style: none;
+    
+}
+
+.liste-compétence li {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.liste-compétence img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+
+#contactFin {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+}
+
+#contactFin img {
+    height: 50px;
+    width: auto;
+}
