@@ -19,7 +19,7 @@ const pathLength = path.getTotalLength();
 
 let t = 0.5; // le temps
 let animationId = null;
-const amplitude = 0.02; // 5% de l’échelle du SVG
+const amplitude = 0.02; 
 
 
 
@@ -28,7 +28,7 @@ function animate() {
 
 
   if (arret) return;
-  // Sinus pour un mouvement fluide en boucle (périodique)
+ 
   const progress = (Math.sin(t) + 1) / 2; 
   const point = path.getPointAtLength(progress * pathLength);
 
@@ -40,7 +40,7 @@ function animate() {
       calc(-50% + ${point.y * amplitude}px)
     )
   `;
-  t += 0.005; // plus petit = plus lent = plus smooth
+  t += 0.005; 
 
   animationId = requestAnimationFrame(animate);
 }
@@ -65,15 +65,15 @@ dragHandle.addEventListener("mousedown", (e) => {
   arret = true;
 
   if (animationId) {
-    cancelAnimationFrame(animationId); // on arrête l'animation proprement
+    cancelAnimationFrame(animationId); 
     animationId = null;
   }
 
-    // Calculer la position du curseur par rapport à la fenêtre
+    
   offsetX = e.clientX - draggableWindow.offsetLeft;
   offsetY = e.clientY - draggableWindow.offsetTop;
   draggableWindow.style.transition = 'none';
-  document.body.style.userSelect = 'none'; // éviter la sélection de texte
+  document.body.style.userSelect = 'none'; 
 });
 
 document.addEventListener("mousemove", (e) => {
@@ -88,7 +88,7 @@ document.addEventListener("mousemove", (e) => {
 document.addEventListener("mouseup", () => {
   isDragging = false;
   arret = false;
-  document.body.style.userSelect = ""; // rétablir la sélection de texte
+  document.body.style.userSelect = ""; 
 
   if (!animationId) {
     setTimeout(() => {
@@ -124,7 +124,7 @@ const screenWidth = window.innerWidth;
 
 let threshold;
 if (screenWidth < 600) {
-  threshold = 0.1; // sur petits écrans (mobiles)
+  threshold = 0.1; // sur petits écrans 
 } else if (screenWidth < 1024) {
   threshold = 0.5; // tablettes
 } else {
@@ -145,8 +145,8 @@ const categorieObserver = new IntersectionObserver(function(entries) {
       
 
       const randomized = items
-        .map(item => ({ el: item, delay: Math.random() * 0.5 + 0.1 })) // entre 0.1 et 0.6s
-        .sort(() => Math.random() - 0.5); // ordre aléatoire
+        .map(item => ({ el: item, delay: Math.random() * 0.5 + 0.1 })) 
+        .sort(() => Math.random() - 0.5); 
 
       randomized.forEach(({ el, delay }) => {
         el.style.animationDelay = `${delay}s`;
@@ -156,9 +156,9 @@ const categorieObserver = new IntersectionObserver(function(entries) {
         setTimeout(() => {
             el.classList.remove("float-in");
             el.classList.remove('hidden');
-            el.style.animationDelay = ""; // reset
+            el.style.animationDelay = ""; 
             el.classList.add("gentle-float");
-          }, (delay + 0.6) * 1000); // quand floatIn est terminé
+          }, (delay + 0.6) * 1000); 
        
         
       });
@@ -167,7 +167,7 @@ const categorieObserver = new IntersectionObserver(function(entries) {
       
       setTimeout(() => {
           entries[i].target.classList.add("has-animated");
-      }, (maxDelay + 0.6) * 1000); // délai + durée floatIn
+      }, (maxDelay + 0.6) * 1000); 
       
     }
   }
